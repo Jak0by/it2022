@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine prosjekter</title>
+
+
+    <style>
+        body {
+            background-image: url(./Githubbakgrunn.png);
+            margin: auto;
+            text-align: center;
+            z-index: -3;
+    
+        }
+
+        .hovedborder {
+            border: 3px solid black;
+            border-top: 70px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 50px;
+            transition-duration: 0.8s;
+
+        }
+
+        a:hover {
+            color: gold;
+            font-size: 65px;
+        }
+
+        div {
+            width: 100%;
+            
+            animation: gradient 2s infinite alternate linear;
+            background: hsl(224, 38%, 41%);
+        }
+
+
+        @keyframes gradient {
+            0% {
+                background-color: transparent;
+            }
+
+            100% {
+                background-color: royalblue
+            }
+
+
+        }
+
+        .hovedborder li a::after
+        {
+            content: attr(data-after);
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -70%) scale(0);
+            font-size: 8rem;
+            color: gold;
+            letter-spacing: 50px;
+            z-index: -1;
+            transition: 0.4s ease letter-spacing;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .hovedborder li:hover a::after{
+            transform: translate(-50%,-50%) scale(1);
+            letter-spacing: initial;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="hovedborder">
+        <h1 style="color: gold;">Dette er mine prosjekter</h1>
+
+        <li><a href="Innbyggere_index.html" data-after="uke 39">Innbyggere i Land</a></li>
+        <br>
+        <li><a href="Testfil-1.html" data-after="uke 40">Min timeplan</a></li>
+        <br>
+       <li><a href="Periode.html" data-after="uke 41">Periodesystemet</a></li>
+        <br>
+        <li><a href="Hemmeligpassord.html" data-after="uke 43">Mitt hemmelige passord</a></li>
+        <br>
+       <li><a href="funksjoner.html" data-after="uke 43">Funksjoner (Java)</a></li>
+        <br>
+    </div>
+
+</body>
+
+</html>
