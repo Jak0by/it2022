@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+            div {
+            position: absolute;
+            background-image: url(./dinosaur.png);
+            width: 50px;
+            height: 50px;    
+        }
+
+        .stoppekl {
+            position: absolute;
+            margin-right: -625px;
+            margin-left: 1225px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="stoppekl">
+        <h1>Stoppeklokke</h1>
+        <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-reset">Reset</button>
+        </div> 
+</body>
+
+<body>
+    <input id="farge" type="color">
+    <script>
+        let ny = false
+        var farge = document.getElementById("farge");
+
+        
+        window.onclick = function (evt) {
+            ny = true
+            var mittElement = document.createElement("div");
+            mittElement.style.top = evt.clientY - 25 + "px";
+            mittElement.style.left = evt.clientX - 25 + "px";
+            mittElement.onmouseenter = fjern;
+            document.body.appendChild(mittElement)
+        }
+
+    
+        var fjern = function (evt) {
+            evt.stopPropagation();
+            if (!ny) {
+                var minAnim = evt.target.animate([{ transform: "scale(1)" }, { transform: "scale(2)"}],)
+                minAnim.onfinish = function () {
+                    document.body.removeChild(evt.target)
+                }
+            }
+            ny = false
+        }
+
+        farge.onclick = function (evt) {
+            evt.stopPropagation();
+        }
+        window.onload = function () {
+  
+  var seconds = 00; 
+  var tens = 00; 
+  var appendTens = document.getElementById("tens")
+  var appendSeconds = document.getElementById("seconds")
+  var buttonStart = document.getElementById('button-start');
+  var buttonStop = document.getElementById('button-stop');
+  var buttonReset = document.getElementById('button-reset');
+  var Interval ;
+
+  buttonStart.onclick = function() {
+    
+    clearInterval(Interval);
+     Interval = setInterval(startTimer, 10);
+  }
+  
+    buttonStop.onclick = function() {
+       clearInterval(Interval);
+  }
+  
+
+  buttonReset.onclick = function() {
+     clearInterval(Interval);
+    tens = "00";
+  	seconds = "00";
+    appendTens.innerHTML = tens;
+  	appendSeconds.innerHTML = seconds;
+  }
+  
+   
+  
+  function startTimer () {
+    tens++; 
+    
+    
+    if(tens <= 9){
+      appendTens.innerHTML = "0" + tens;
+    }
+    
+    if (tens > 9){
+      appendTens.innerHTML = tens;
+      
+    } 
+    
+    if (tens > 99) {
+      console.log("seconds");
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      tens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+    
+    if (seconds > 9){
+      appendSeconds.innerHTML = seconds;
+    }
+  
+  }
+  
+
+}
+
+    </script>
+</body>
+
+</html>
