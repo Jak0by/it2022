@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #Informasjon {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+        }
+
+        h6 {
+            position: absolute;
+            left: 130px;
+            font-size: 30px;
+            top: -15%;
+            text-align: center;
+
+        }
+
+
+
+        h4 {
+            font-size: 25px;
+        }
+
+
+        #mal1 {
+            position: absolute;
+            border: solid 2px;
+            top: 200px;
+            left: 50%;
+            width: 45vw;
+            height: 45vh;
+            z-index: 8;
+            background: hsla(0, 51%, 92%, 1);
+            background: radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(0, 85%, 56%, 1) 36%);
+            background: -moz-radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(0, 85%, 56%, 1) 36%);
+            background: -webkit-radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(0, 85%, 56%, 1) 36%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#f5e0e0", endColorstr="#ee3232", GradientType=1);
+        }
+
+        #mal2 {
+            position: absolute;
+            border: solid 2px;
+            top: 200px;
+            left: 50%;
+            width: 45vw;
+            height: 45vh;
+            z-index: 8;
+            background: hsla(0, 51%, 92%, 1);
+            background: radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(229, 79%, 44%, 1) 50%);
+            background: -moz-radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(229, 79%, 44%, 1) 50%);
+            background: -webkit-radial-gradient(circle, hsla(0, 51%, 92%, 1) 0%, hsla(229, 79%, 44%, 1) 50%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#f5e0e0", endColorstr="#1839C9", GradientType=1);
+        }
+
+        #navn {
+            position: absolute;
+            top: 155px;
+            left: 50%;
+            width: 230px;
+            z-index: 8;
+            font-size: 30px;
+        }
+
+        #telefon {
+            position: absolute;
+            top: 195px;
+            left: 50%;
+            width: 200px;
+            z-index: 8;
+        }
+
+        #adresse {
+            position: absolute;
+            top: 215px;
+            left: 50%;
+            width: 200px;
+            z-index: 8;
+        }
+
+        #sitat {
+            position: absolute;
+            top: 235px;
+            left: 50%;
+            width: 200px;
+            z-index: 8;
+        }
+
+        #tittel1 {
+            height: 13.5vh;
+            margin-left: 50%;
+            margin-top: 8%;
+        }
+
+
+        #tittel2 {
+            height: 13.5vh;
+            margin-left: 50%;
+            margin-top: 8%;
+        }
+
+        #bildemal {
+            background-color: black;
+            position: absolute;
+            top: 34.5%;
+            height: 255px;
+            width: 210px;
+            transform: rotate(-15deg);
+            margin-left: 52.5%;
+            z-index: 9;
+        }
+
+        #bub {
+            background-color: black;
+            position: absolute;
+            top: 35.3%;
+            height: 228px;
+            width: 190px;
+            transform: rotate(-15deg);
+            margin-left: 52.8%;
+            z-index: 9;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <h1>Lag ditt russekort</h1>
+
+        <div id="Informasjon">
+
+            <div id="bildemal" div>
+            </div>
+
+            <h3>Velg en farge</h3>
+            <label for="farge">Rød:</label>
+            <input type="radio" name="farge" id="roodRadio">
+
+            <label for="farge">Blå:</label>
+            <input type="radio" name="farge" id="blaaRadio">
+
+            <h4>Bilde</h4>
+            <h5>Oblikatorisk bilde av Marcus Bubresko (ikke lov å bytte)</h5>
+
+
+            <div id="mal2">
+                <h6 id="skole" contenteditable="true">Nesbru Videregående Skole 2024</h6>
+                <h10 id="navn" contenteditable="true">Jakob Bjørgo</h10>
+                <h11 id="telefon" contenteditable="true">Telefon-nummer: 302402342</h11>
+                <h12 id="adresse" contenteditable="true">Adresse: Nesbru</h12>
+                <h13 id="sitat" contenteditable="true">Sitat: Ja</h13>
+                <img id="tittel2" src="blaaruss.tittel.png" alt="">
+                
+            </div>
+            <img id="bub" src="IMG_5471.JPG" alt="">
+            <div>
+
+            </div>
+
+            <script>
+                let roodradio = document.getElementById("roodRadio")
+                let blaaRadio = document.getElementById("blaaRadio")
+                let mal1 = document.getElementById("mal1")
+                let mal2 = document.getElementById("mal2")
+                let tittel1 = document.getElementById("tittel1")
+                let tittel2 = document.getElementById("tittel2")
+
+                roodradio.onclick = function () {
+                    mal2.setAttribute("id", "mal1")
+                    tittel2.src = "./rodruss.tittel.png"
+                }
+
+                blaaRadio.onclick = function () {
+                    mal2.setAttribute("id", "mal2")
+                    tittel2.src = "blaaruss.tittel.png"
+                }
+            </script>
+
+</body>
+
+</html>
